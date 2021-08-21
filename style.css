@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-image: url(images/bg-pattern-desktop.svg),
+  linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.inner-container {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+.left {
+  width: 60%;
+}
+
+.right {
+  width: 40%;
+}
+.bg-image {
+  background-image: url(images/hero-desktop.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+.bg-mobile{
+    display:none;
+}
+
+.logo {
+  margin: 60px 0 100px;
+  width: 200px;
+}
+h1 {
+  font-size: 60px;
+  letter-spacing: 10px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: hsl(0, 6%, 24%);
+  transform: translateX(-40%);
+  opacity: 0;
+  animation: comeinleft 1s forwards;
+}
+h1 span {
+  color: hsl(0, 36%, 70%);
+  font-weight: 200;
+}
+.text {
+  color: hsl(0, 36%, 70%);
+  line-height: 26px;
+  margin: 30px 0;
+}
+form {
+  position: relative;
+}
+input {
+  background-color: transparent;
+  border: 1px solid hsl(0, 36%, 70%);
+  padding: 15px 20px;
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  color: hsl(0, 36%, 70%);
+}
+input:focus {
+  outline: none;
+  border-width: 2px;
+  box-shadow: 1px 1px 5px hsl(0, 36%, 70%);
+}
+form.error input {
+  border: 1px solid hsl(0, 93%, 68%);
+}
+
+button {
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  box-shadow: 2px 2px 10px hsl(0, 36%, 70%);
+  padding: 15px;
+  border: none;
+  width: 100px;
+  height: 50px;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: 0.8s ease;
+}
+
+button:hover {
+  background-image: linear-gradient(
+    135deg,
+    hsla(0, 80%, 86%, 0.8),
+    hsla(0, 74%, 74%, 0.8)
+  );
+  transform: scale(1.05) translateX(10%);
+  cursor: pointer;
+}
+
+.icon-error {
+  position: absolute;
+  top: 13px;
+  right: 110px;
+  display: none;
+}
+form.error .icon-error {
+  display: block;
+}
+small {
+  display: none;
+  color: hsl(0, 93%, 68%);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+form.error small {
+  display: block;
+}
+
+/*Animations*/
+
+@keyframes comeinleft {
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 650px) {
+    .logo{
+        margin: 30px 0;
+    }
+  .container{
+    display:block
+  }
+  .inner-container {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  .left {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .right {
+    display: none;
+  }
+  .bg-mobile{
+    display:block;
+    margin-left:-20px;
+    margin-bottom:20px;
+    width:calc(100% + 40px);
+}
+}
